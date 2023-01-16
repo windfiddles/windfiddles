@@ -3,34 +3,110 @@
   <head>
     <title>Wind Fiddles</title>
   </head>
-  <style>
-  .container {
-    align-items: center;
-    justify-content: center;
-  }
-  
-  img {
-    max-width: 30%;
-    max-height:15%;
-    float: left;
-  }
-  
-  .text {
-    font-size: 20px;
-    padding-left: 20px;
-    padding-top: 20%;
-    float: left;
-  }
-  </style>
+
   <body>
     <div class="container">
       <div class="image">
         <img src="Images/230116-cherry.png">
       </div>
       <div class="text">
-        <h1>Wind Fiddles.</h1>
-        <h2>Engineered for travel, designed to play.<h2>
+        <h1>Wind Fiddles</h1>
+        <h2>Engineered for travel<h2>
+        <h2>Designed to play<h2>
+          <ul>
+            <li><a href="default.asp">Home</a></li>
+            <li><a href="news.asp">News</a></li>
+            <li><a href="contact.asp">Contact</a></li>
+            <li><a href="about.asp">About</a></li>
+          </ul>
       </div>
+<!--       <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+      </div> -->
     </div>
   </body>
+
+
+
+
 </html>
+
+<style>
+  .container {
+    align-items: center;
+    justify-content: center;
+  }
+  
+  img {
+    max-width: 40%;
+    max-height:100%;
+    float: left;
+  }
+  
+  .text {
+    font-size: 20px;
+    /*padding-left: 5%;*/
+    padding-top: 20%;
+    padding-right: 10%;
+    float: left;
+  }
+
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /*width: 60px;*/
+  /*background-color: #f1f1f1;*/
+/*  padding-left: 10px;
+  float: left;*/
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 0px 16px;
+
+  /*width: 60px;*/
+}
+
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+/* The navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 50%; /* Full width */
+  float: right;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+/* Main content */
+.main {
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
+
+
+  
+  </style>
