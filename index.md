@@ -1,5 +1,5 @@
 
-![4-string](Images/IMG_2352.heic)
+![4-string](Images/230116-cherry.png)
 <p> Wind Fiddles</p>
 
 [4 String Violins](./4-strings.html).
