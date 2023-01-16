@@ -19,7 +19,7 @@
     font-size: 20px;
     padding-left: 20px;
     padding-top: 20%;
-    float: right;
+    float: left;
   }
   </style>
   <body>
