@@ -10,7 +10,7 @@
   }
   
   img {
-    max-width: 100%;
+    max-width: 50%;
     max-height:15%;
     float: left;
   }
@@ -29,6 +29,7 @@
       </div>
       <div class="text">
         <h1>Wind Fiddles.</h1>
+        <h2>Engineered for travel, designed to play.<h2>
       </div>
     </div>
   </body>
