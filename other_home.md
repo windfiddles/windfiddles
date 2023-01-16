@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pretty flower</title>
+    <title>Wind Fiddles</title>
   </head>
   <style>
   .container {
@@ -19,7 +19,7 @@
     font-size: 20px;
     padding-left: 20px;
     padding-top: 20%;
-    float: left;
+    float: right;
   }
   </style>
   <body>
