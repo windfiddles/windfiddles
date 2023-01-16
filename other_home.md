@@ -10,7 +10,7 @@
   }
   
   img {
-    max-width: 25%;
+    max-width: 100%;
     max-height:15%;
     float: left;
   }
@@ -25,10 +25,10 @@
   <body>
     <div class="container">
       <div class="image">
-        <img src="https://i.pinimg.com/564x/48/bf/c9/48bfc9ae0a10418849a3f50d57c08897.jpg">
+        <img src="Images/230116-cherry.png">
       </div>
       <div class="text">
-        <h1>This is a beautiful garden.</h1>
+        <h1>Wind Fiddles.</h1>
       </div>
     </div>
   </body>
