@@ -1,6 +1,6 @@
-### Wind Fiddles
+## Wind Fiddles
 
-## Electric Violins by Al Patterson
+### Electric Violins by Al Patterson
 
 I am currently working on developing an ultraportable electric violin system.
 
