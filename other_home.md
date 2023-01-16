@@ -10,7 +10,7 @@
   }
   
   img {
-    max-width: 50%;
+    max-width: 30%;
     max-height:15%;
     float: left;
   }
