@@ -73,6 +73,7 @@ ul.gallery-links {
 ul.gallery-links li {
   width: auto;
   display: inline;
+  font-size: 2vw;
 
 }
 
@@ -81,7 +82,7 @@ ul.home-links a {
   padding: 0px 10px;
 }
 ul.gallery-links a {
-  font-size: 3vw;
+  font-size: 2vw;
   padding: 16px;
   padding-left: 0px;
   text-align: center;
