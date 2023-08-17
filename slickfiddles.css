@@ -1,0 +1,181 @@
+.container-home {
+  align-items: center;
+  justify-content: center;
+  display: inline-block;
+  /*padding-top: 56px;*/
+  position:absolute;
+  top: 50%;
+    -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+}
+.container-gallery-header {
+  align-items: center;
+  justify-content: center;
+  display: inline-block;
+
+}
+
+.home-image {
+  width:45%;
+  max-height:100%;
+  float: left;
+  position: relative;
+}
+
+
+.home-text {
+  font-size: 4vw;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  float: left;
+  max-width: 50%;
+  background-color: #000;}
+
+/* --------------- */
+/* Content Positioning */
+/* --------------- */
+
+h1.header-home {
+  /*font-size: 1;*/
+   text-align: center;
+  display: inline-block;
+  /*justify-content: center;*/
+  /*margin: 36px 0 0;*/
+  white-space: nowrap;
+
+}
+
+h1.header-gallery{
+  /*font-size: 1;*/
+  text-align: center;
+  margin: 18px 0 0;
+  /*justify-content: center;*/
+  display: inline-block;
+}
+
+ul.home-links {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+  text-align: left;
+  float: center;
+}
+
+ul.gallery-links {
+  position: relative;
+  display: block;
+  text-align: center;
+  padding-left: 0;
+}
+
+ul.gallery-links li {
+  width: auto;
+  display: inline;
+
+}
+
+ul.home-links a {
+  display: block;
+  padding: 0px 10px;
+}
+ul.gallery-links a {
+  font-size: 3vw;
+  padding: 16px;
+  padding-left: 0px;
+  text-align: center;
+}
+
+div.links {text-align: right;}
+
+
+
+/* ------ */
+/* Colors */
+/* ------ */
+h1 {color: #deb887;}
+a {color: #deb887; }
+a {color:white;}
+li a {color:#deb887;}
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+div.desc{color:white;}
+body {background-color: black;}
+div.text {color:white;}
+
+/* ------------- */
+/* Image Gallery */
+/* ------------- */
+/* The expanding image container (positioning is needed to position the close button and the text) */
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.container_image {
+  display: flex;
+  text-align: center;
+
+}
+
+.responsive {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.container_image img {
+  position: relative;
+  max-width: 100%;
+  max-height: 500px;
+  /*height:00px;*/
+  text-align: center;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: relative;
+  bottom: 40px;
+  right: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the image */
+.closebtn {
+  position: relative;
+  display: block;
+  top: 10px;
+  right: 15px;
+  color: black;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+
+/* code for gallery */
+
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  height: 100px;
+  width: 100%;
+  height: width;
+  text-align: center;
+  width: auto;
+  /*height: auto;*/
+}
+
+div.desc {
+  padding: 5px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}

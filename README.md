@@ -2,23 +2,7 @@
 
 ### Electric Violins by Al Patterson
 
-I am currently working on developing an ultraportable electric violin system.
+I build high-quality ultraportable electric violins.
+I am currently building 4 and 5 string versions.
 
-I have designs for 4 and 5 string electric violins. 
-
-[Link to another page](./another-page.html).
-
-<!--
-**windfiddles/windfiddles** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+[Check out the web page here!](./home.html).
