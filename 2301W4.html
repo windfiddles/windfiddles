@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S9LCPP6DYB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S9LCPP6DYB');
+</script>
+  <title>Wind Fiddles</title>
+  <link rel="stylesheet" href="slickfiddles.css">
+</head>
+
+
+
+<body>
+
+  <div class="container-gallery-header">
+    <div class="text-gallery">
+      <h1 class="header-gallery">Wind Fiddles</h1>
+      <div class="links">
+        <ul class="gallery-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contact.html">Inquiries</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- The expanding image container -->
+  <div class="container_image">
+    <!-- Close the image -->
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+
+    <!-- Expanded image -->
+    <img id="expandedImg" > <!-- style="width:80%"> -->
+
+    <!-- Image text -->
+    <div id="imgtext"></div>
+  </div>
+
+
+
+  <div class="responsive">   
+    <div class="gallery">
+      <!-- <a target="_self" href="Images/ash_dark.png"> -->
+        <img src="Images/ash_dark.webp" alt="" onclick="expand(this);">
+      </a>
+      <div class="desc">Ash 4-String</div>
+    </div>
+
+    <div class="gallery">
+      <!-- <a target="_blank" href="Images/ash_dark.png"> -->
+        <img src="Images/ash_moss.webp" alt=""  onclick="expand(this);">
+      </a>
+      <div class="desc">Ash 4-String</div>
+    </div>
+
+    <div class="gallery">
+      <!-- <a target="_blank" href="Images/ash_dark.png"> -->
+        <img src="Images/ash_stream.webp" alt=""  onclick="expand(this);">
+      </a>
+      <div class="desc">Ash 4-String</div>
+    </div>
+
+    <div class="gallery">
+      <!-- <a target="_blank" href="Images/ash_dark.png"> -->
+        <img src="Images/ash_hanging.webp" alt=""  onclick="expand(this);">
+      </a>
+      <div class="desc">Ash 4-String</div>
+    </div>
+
+    <div class="gallery">
+      <!-- <a target="_blank" href="Images/cherry_top.png"> -->
+        <img src="Images/cherry_top.webp" alt="" onclick="expand(this);">
+      </a>
+      <div class="desc">Cherry 4-String</div>
+    </div>
+  </div>
+
+
+</body>
+</html>
+
+<script>
+  function expand(imgs) {
+  // Get the expanded image
+  var expandImg = document.getElementById("expandedImg");
+  // Get the image text
+  var imgText = document.getElementById("imgtext");
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  expandImg.src = imgs.src;
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  imgText.innerHTML = imgs.alt;
+  // Show the container element (hidden with CSS)
+  expandImg.parentElement.style.display = "block";
+
+}
+</script>
