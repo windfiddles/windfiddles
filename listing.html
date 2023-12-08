@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wind Fiddles</title>
+  <link rel="stylesheet" href="slickfiddles.css">
+</head>
+
+<body>
+
+  <div class="container-gallery-header">
+    <div class="text-gallery">
+      <h1 class="header-gallery">Wind Fiddles</h1>
+      <div class="links">
+        <ul class="gallery-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contact.html">Inquiries</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="links">
+    <ul class="listing-links">
+      <li><a href="listing/22PC4/22PC4.html">Cherry 4-String</a></li>
+      <li><a href="listing/23PA4/23PA4.html">Ash 4-String</a></li>
+      <li><a href="listing/2301W5/2301W5.html">Walnut 5-String</a></li>
+      <li><a href="listing/2302WSP5/2302WSP5.html">Spalted Walnut 5-String</a></li>
+</ul>
+</div>
+
+  <!-- The expanding image container -->
+  <div class="container_image">
+    <!-- Close the image -->
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+
+    <!-- Expanded image -->
+    <img id="expandedImg" > <!-- style="width:80%"> -->
+
+    <!-- Image text -->
+    <div id="imgtext"></div>
+  </div>
+
+
+</body>
+</html>
+
+<script>
+  function expand(imgs) {
+  // Get the expanded image
+  var expandImg = document.getElementById("expandedImg");
+  // Get the image text
+  var imgText = document.getElementById("imgtext");
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  expandImg.src = imgs.src;
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  imgText.innerHTML = imgs.alt;
+  // Show the container element (hidden with CSS)
+  expandImg.parentElement.style.display = "block";
+
+}
+</script>

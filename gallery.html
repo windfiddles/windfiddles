@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wind Fiddles</title>
+  <link rel="stylesheet" href="slickfiddles.css">
+</head>
+
+<body>
+
+  <div class="container-gallery-header">
+    <div class="text-gallery">
+      <h1 class="header-gallery">Wind Fiddles</h1>
+      <div class="links">
+        <ul class="gallery-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contact.html">Inquiries</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- The expanding image container -->
+  <div class="container_image">
+    <!-- Close the image -->
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+
+    <!-- Expanded image -->
+    <img id="expandedImg" > <!-- style="width:80%"> -->
+    <div><br><br></div>
+    <!-- Image text -->
+    <div id="imgtext"></div>
+  </div>
+
+
+
+<div class="scroll-container">
+  <!-- <div class="gallery"> -->
+  <img src="Images/ash_dark.webp" alt="Ash 4-String" onclick="expand(this);">
+      </a>
+  <img src="Images/ash_moss.webp" alt="Ash 4-String" onclick="expand(this);">
+      </a>
+  <img src="Images/ash_stream.webp" alt="Ash 4-String" onclick="expand(this);">
+      </a>
+  <img src="Images/ash_hanging.webp" alt="Ash 4-String" onclick="expand(this);">
+      </a>
+  <img src="Images/ash_dock.webp" alt="Ash 4-String" onclick="expand(this);">
+      </a>
+  <img src="Images/cherry_top.webp" alt="Cherry 4-String" onclick="expand(this);">
+      </a>
+  <img src="Images/cherry_shikara.webp" alt="Cherry 4-String" onclick="expand(this);">
+      </a>
+  <img src="Images/teak_kayak.webp" alt="Teak 5-String Prototype" onclick="expand(this);">
+      </a>
+<!--  </div>
+ --></div>
+
+ <div class="gallery-links">
+<p>Scroll right for more pictures</p>
+</div>
+
+
+</body>
+</html>
+
+<script>
+  function expand(imgs) {
+  // Get the expanded image
+  var expandImg = document.getElementById("expandedImg");
+  // Get the image text
+  var imgText = document.getElementById("imgtext");
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  expandImg.src = imgs.src;
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  imgText.innerHTML = imgs.alt;
+  // Show the container element (hidden with CSS)
+  expandImg.parentElement.style.display = "block";
+
+}
+</script>
