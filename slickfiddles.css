@@ -55,6 +55,7 @@ h1.header-gallery{
 }
 
 ul.home-links {
+  font-size: 2.5vw;
   display: inline-block;
   list-style-type: none;
   margin: 0;
@@ -63,17 +64,27 @@ ul.home-links {
   float: center;
 }
 
-ul.gallery-links {
+.gallery-links {
   position: relative;
   display: block;
   text-align: center;
   padding-left: 0;
+  color: #deb887;
 }
+
+.listing-links {
+  position: relative;
+  display: block;
+  text-align: left;
+  padding-left: 0;
+  color: #deb887;
+}
+
 
 ul.gallery-links li {
   width: auto;
   display: inline;
-  font-size: 2vw;
+  /*font-size: 2vw;*/
 
 }
 
@@ -82,14 +93,19 @@ ul.home-links a {
   padding: 0px 10px;
 }
 ul.gallery-links a {
-  font-size: 2vw;
+  font-size: 1.5vw;
   padding: 16px;
   padding-left: 0px;
   text-align: center;
 }
 
-div.links {text-align: right;}
+div.owner-desc {
+  font-size: 1.5vw;
+  color: #deb887;
+}
 
+div.links {text-align: right;}
+.titles { text-align : left; } /*# for violin properties in owner pages
 
 
 /* ------ */
@@ -98,6 +114,7 @@ div.links {text-align: right;}
 h1 {color: #deb887;}
 a {color: #deb887; }
 a {color:white;}
+li {color: #deb887;}
 li a {color:#deb887;}
 li a:hover {
   background-color: #555;
@@ -119,13 +136,7 @@ div.text {color:white;}
 
 }
 
-div.container_image img {
-  position: relative;
-  max-width: 100%;
-  max-height: 500px;
-  /*height:00px;*/
-  text-align: center;
-}
+
 
 /* Closable button inside the image */
 .closebtn {
@@ -153,14 +164,13 @@ div.container_image img {
   position: relative;
   bottom: 40px;
   right: 15px;
-  color: white;
+  /*color: white;*/
+  color:#deb887;
   font-size: 20px;
 }
 
 
-
-
-/* code for gallery */
+/* code for old gallery */
 
 div.gallery {
   border: 1px solid #ccc;
@@ -169,6 +179,7 @@ div.gallery {
 div.gallery:hover {
   border: 1px solid #777;
 }
+
 
 .gallery img {
   /*height: 100px;*/
@@ -188,3 +199,34 @@ div.desc {
 * {
   box-sizing: border-box;
 }
+
+/* end code for old gallery*/
+
+/* experimental */
+
+
+div.container_image img {
+  position: relative;
+  /*height: 700px;*/
+  /*width: auto;*/
+  /*max-width: 500px;*/
+  max-height: 500px;
+  width: auto;
+  /*height:00px;*/
+  text-align: center;
+}
+
+div.scroll-container {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+div.scroll-container img {
+  padding: 10px; 
+  height: 300px;
+  width: auto;
+  /*max-width: 300px;*/
+}
+
