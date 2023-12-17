@@ -68,11 +68,20 @@
 </div>
 
 
+<!-- <div id="popup" class="popup">
+  <span class="close" onclick="closePopup()">&times;</span>
+  <img id="popup-image" src="" alt="Popup Image">
+  <!- <div id="popup-caption" class="caption"></div> -->
+<!-- </div> --> 
+
 <div id="popup" class="popup">
   <span class="close" onclick="closePopup()">&times;</span>
   <img id="popup-image" src="" alt="Popup Image">
-  <!-- <div id="popup-caption" class="caption"></div> -->
+  <div id="popup-caption" class="caption"></div>
+  <button class="popup-btn left" onclick="navigateImages(-1)">&#10094;</button>
+  <button class="popup-btn right" onclick="navigateImages(1)">&#10095;</button>
 </div>
+
 
 <script>
   // Gallery data in an array
@@ -93,22 +102,21 @@
     // Add more gallery items as needed
   ];
 
-  // Function to create gallery items dynamically
-  function createGalleryItem(data) {
+  function createGalleryItem(data, index) {
     const galleryItem = document.createElement('div');
     galleryItem.classList.add('gallery-item');
     galleryItem.onclick = function() {
-      openPopup(data.src, data.alt);
+      openPopup(data.src, data.caption, index);
     };
 
     const image = document.createElement('img');
     image.src = data.src;
-    image.alt = data.alt;
+    image.alt = data.caption;
+    image.loading = 'lazy'
 
     galleryItem.appendChild(image);
     document.getElementById('imageGallery').appendChild(galleryItem);
   }
-
   // Create gallery items using the array data
   galleryData.forEach(createGalleryItem);
 </script>

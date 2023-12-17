@@ -1,13 +1,30 @@
 let currentIndex = 0;
 
-function openPopup(imageSrc, caption, index) {
-  currentIndex = index !== undefined ? index : 0;
-  document.getElementById('popup-image').src = imageSrc;
-  document.getElementById('popup-caption').innerHTML = caption;
-  document.getElementById('popup').classList.add('show');
+// function openPopup(imageSrc, caption, index) {
+//   currentIndex = index !== undefined ? index : 0;
+//   document.getElementById('popup-image').src = imageSrc;
+//   document.getElementById('popup-caption').innerHTML = caption;
+//   document.getElementById('popup').classList.add('show');
 
-  // Add event listeners for keyboard events
-  document.addEventListener('keydown', handleKeyPress);
+//   // Add event listeners for keyboard events
+//   document.addEventListener('keydown', handleKeyPress);
+// }
+
+function openPopup(imageSrc, caption) {
+    const popupImage = document.getElementById('popup-image');
+    const popupCaption = document.getElementById('popup-caption');
+
+    popupImage.src = imageSrc;
+
+    if (caption && caption.trim() !== '') {
+        popupCaption.innerHTML = caption;
+        popupCaption.style.display = 'block'; // Show the caption
+    } else {
+        popupCaption.style.display = 'none'; // Hide the caption
+    }
+
+    document.getElementById('popup').classList.add('show');
+    document.addEventListener('keydown', handleKeyPress);
 }
 
 
