@@ -41,8 +41,25 @@ function navigateImages(offset) {
 
     currentIndex = nextIndex;
   }
-
-
-
-
 }
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+function checkSwipeGesture() {
+    if (touchEndX < touchStartX - 30) {
+        navigateImages(1); // Swipe left, go to next image
+    }
+    if (touchEndX > touchStartX + 30) {
+        navigateImages(-1); // Swipe right, go to previous image
+    }
+}
+
+document.getElementById('popup').addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+}, false);
+
+document.getElementById('popup').addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    checkSwipeGesture();
+}, false);
