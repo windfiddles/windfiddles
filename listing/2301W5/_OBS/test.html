@@ -14,7 +14,7 @@
 </script>
   <title>Wind Fiddles</title>
   <link rel="stylesheet" href="../../slickfiddles3.css">
-  <script src="../../scripts.js" defer></script>
+  <script src="scripts.js" defer></script>
 </head>
 <body>
 
@@ -63,56 +63,32 @@
 </table>
 </div>
 
-<div class="gallery" id="imageGallery">
 
+<div class="gallery">
+  <div class="gallery-item" onclick="openPopup('image1.jpg', 'Image 1')">
+    <img src="image1.jpg" alt="Image 1">
+    <div class="caption">Image 1</div>
+  </div>
+  <div class="gallery-item" onclick="openPopup('image2.jpg', 'Image 2')">
+    <img src="image2.jpg" alt="Image 2">
+    <div class="caption">Image 2</div>
+  </div>
+  <div class="gallery-item" onclick="openPopup('image3.jpg', 'Image 3')">
+    <img src="image3.jpg" alt="Image 3">
+    <div class="caption">Image 3</div>
+  </div>
+  <div class="gallery-item" onclick="openPopup('image4.jpg', 'Image 3')">
+    <img src="image4.jpg" alt="Image 4">
+    <div class="caption">Image 4</div>
+  </div>
+  <!-- Add more gallery items as needed -->
 </div>
-
 
 <div id="popup" class="popup">
   <span class="close" onclick="closePopup()">&times;</span>
   <img id="popup-image" src="" alt="Popup Image">
-  <!-- <div id="popup-caption" class="caption"></div> -->
+  <div id="popup-caption" class="caption"></div>
 </div>
-
-<script>
-  // Gallery data in an array
-  const galleryData = [
-    { src: '1-top.webp', alt: 'Image 1' },
-    { src: '2-top-treble.webp', alt: 'Image 2' },
-    { src: '3-bottom-treble.webp', alt: 'Image 3' },
-    { src: '4-back.webp', alt: 'Image 4' },
-    { src: '5-bottom-bass.webp', alt: 'Image 2' },
-    { src: '6-top-bass.webp', alt: 'Image 3' },
-    { src: '7-close-top.webp', alt: 'Image 4' },
-    { src: '8-close-treble-neck.webp', alt: 'Image 2' },
-    { src: '9-close-bass-neck.webp', alt: 'Image 3' },
-    { src: '10-horizontal.webp', alt: 'Image 4' },
-    { src: '11-bridge.webp', alt: 'Image 2' },
-    { src: '12-close-bottom.webp', alt: 'Image 3' },
-    { src: '13-portrait.webp', alt: 'Image 4' },
-    // Add more gallery items as needed
-  ];
-
-  // Function to create gallery items dynamically
-  function createGalleryItem(data) {
-    const galleryItem = document.createElement('div');
-    galleryItem.classList.add('gallery-item');
-    galleryItem.onclick = function() {
-      openPopup(data.src, data.alt);
-    };
-
-    const image = document.createElement('img');
-    image.src = data.src;
-    image.alt = data.alt;
-
-    galleryItem.appendChild(image);
-    document.getElementById('imageGallery').appendChild(galleryItem);
-  }
-
-  // Create gallery items using the array data
-  galleryData.forEach(createGalleryItem);
-</script>
-
 
 </body>
 </html>

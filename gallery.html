@@ -1,8 +1,26 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <title>Wind Fiddles</title>
-  <link rel="stylesheet" href="slickfiddles.css">
+  <link rel="stylesheet" href="slickfiddles3.css">
+</head> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S9LCPP6DYB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S9LCPP6DYB');
+</script>
+  <title>Wind Fiddles</title>
+  <link rel="stylesheet" href="slickfiddles3.css">
+  <script src="scripts.js" defer></script>
 </head>
 
 <body>
@@ -20,61 +38,55 @@
   </div>
 
 
-  <!-- The expanding image container -->
-  <div class="container_image">
-    <!-- Close the image -->
-    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+<div class="gallery" id="imageGallery">
 
-    <!-- Expanded image -->
-    <img id="expandedImg" > <!-- style="width:80%"> -->
-    <div><br><br></div>
-    <!-- Image text -->
-    <div id="imgtext"></div>
-  </div>
-
-
-
-<div class="scroll-container">
-  <!-- <div class="gallery"> -->
-  <img src="Images/ash_dark.webp" alt="Ash 4-String" onclick="expand(this);">
-      </a>
-  <img src="Images/ash_moss.webp" alt="Ash 4-String" onclick="expand(this);">
-      </a>
-  <img src="Images/ash_stream.webp" alt="Ash 4-String" onclick="expand(this);">
-      </a>
-  <img src="Images/ash_hanging.webp" alt="Ash 4-String" onclick="expand(this);">
-      </a>
-  <img src="Images/ash_dock.webp" alt="Ash 4-String" onclick="expand(this);">
-      </a>
-  <img src="Images/cherry_top.webp" alt="Cherry 4-String" onclick="expand(this);">
-      </a>
-  <img src="Images/cherry_shikara.webp" alt="Cherry 4-String" onclick="expand(this);">
-      </a>
-  <img src="Images/teak_kayak.webp" alt="Teak 5-String Prototype" onclick="expand(this);">
-      </a>
-<!--  </div>
- --></div>
-
- <div class="gallery-links">
-<p>Scroll right for more pictures</p>
 </div>
 
 
-</body>
-</html>
+<div id="popup" class="popup">
+  <span class="close" onclick="closePopup()">&times;</span>
+  <img id="popup-image" src="" alt="Popup Image">
+  <div id="popup-caption" class="caption"></div>
+</div>
+
 
 <script>
-  function expand(imgs) {
-  // Get the expanded image
-  var expandImg = document.getElementById("expandedImg");
-  // Get the image text
-  var imgText = document.getElementById("imgtext");
-  // Use the same src in the expanded image as the image being clicked on from the grid
-  expandImg.src = imgs.src;
-  // Use the value of the alt attribute of the clickable image as text inside the expanded image
-  imgText.innerHTML = imgs.alt;
-  // Show the container element (hidden with CSS)
-  expandImg.parentElement.style.display = "block";
+  // Gallery data in an array
+  const galleryData = [
+    { src: 'images/walnut-2-top-treble.webp', caption: 'Walnut 5-String - $2999' },
+    { src: 'images/ash-2-top-treble.png', caption: 'Ash 4-String - Prototype' },
+    { src: 'images/spwalnut-2-top-treble.png', caption: 'Spalted Walnut 5-String - Prototype' },
+    { src: 'images/cherry_top.webp', caption: 'Cherry 4-String - Prototype' },
+    { src: 'images/cherry_shikara.webp', caption: 'Cherry 4-String - Prototype' },
+    { src: 'images/teak_kayak.webp', caption: 'Teak 5-String - Prototype' },
+    { src: 'images/ash_dark.webp', caption: 'Ash 4-String - Prototype' },
+    { src: 'images/ash_moss.webp', caption: 'Ash 4-String - Prototype' },
+    { src: 'images/ash_stream.webp', caption: 'Ash 4-String - Prototype' },
+    { src: 'images/ash_dock.webp', caption: 'Ash 4-String - Prototype' },
+    // { src: '11-bridge.webp', alt: 'Image 2' },
+    // { src: '12-close-bottom.webp', alt: 'Image 3' },
+    // { src: '13-portrait.webp', alt: 'Image 4' },
+    // Add more gallery items as needed
+  ];
 
-}
+  // Function to create gallery items dynamically
+  function createGalleryItem(data) {
+    const galleryItem = document.createElement('div');
+    galleryItem.classList.add('gallery-item');
+    galleryItem.onclick = function() {
+      openPopup(data.src, data.alt);
+    };
+
+    const image = document.createElement('img');
+    image.src = data.src;
+    image.alt = data.alt;
+
+    galleryItem.appendChild(image);
+    document.getElementById('imageGallery').appendChild(galleryItem);
+  }
+
+  // Create gallery items using the array data
+  galleryData.forEach(createGalleryItem);
 </script>
+
+

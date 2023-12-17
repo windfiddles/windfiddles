@@ -5,4 +5,4 @@
 I build high-quality ultraportable electric violins.
 I am currently building 4 and 5 string versions.
 
-[Check out the web page here!](https://www.windfiddles.com).
+[Check out the web page here!](./index.html).

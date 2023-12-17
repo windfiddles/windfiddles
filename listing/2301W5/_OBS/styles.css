@@ -1,0 +1,196 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: white;
+}
+
+/* Shared Styles for Content Positioning */
+.container-home,
+.container-gallery-header {
+  align-items: center;
+  justify-content: center;
+  display: inline-block;
+}
+
+.home-image {
+  width: 45%;
+  max-height: 100%;
+  float: left;
+  position: relative;
+}
+
+.home-text {
+  font-size: 4vw;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  float: left;
+  max-width: 50%;
+  background-color: #000;
+}
+
+h1 {
+  text-align: center;
+  display: inline-block;
+  white-space: nowrap;
+  color: #deb887;
+}
+
+ul.home-links,
+ul.gallery-links,
+.listing-links {
+  font-size: 2.5vw;
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+  text-align: left;
+  float: center;
+  color: #deb887;
+}
+
+.gallery-links,
+.listing-links {
+  position: relative;
+  display: block;
+  text-align: center;
+  padding-left: 0;
+}
+
+ul.gallery-links li {
+  width: auto;
+  display: inline;
+}
+
+ul.home-links a,
+ul.gallery-links a {
+  display: block;
+  padding: 0px 10px;
+}
+
+div.owner-desc {
+  font-size: 1.5vw;
+  color: #deb887;
+}
+
+div.links {
+  text-align: right;
+}
+
+.titles {
+  text-align: left;
+}
+
+/* Colors */
+h1,
+a,
+li,
+li a {
+  color: #deb887;
+}
+
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+div.desc,
+div.text {
+  color: white;
+}
+
+/* Image Gallery Styles */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  flex: 0 0 20%;
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* Popup Styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup.show {
+  display: flex;
+}
+
+.popup img {
+  max-width: 100%;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+}
+
+.popup .caption {
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+.popup .close {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.popup .close:hover {
+  color: #aaa;
+}
+
+/* Experimental Styles */
+.container_image {
+  display: flex;
+  text-align: center;
+}
+
+/* ... (rest of the styles) */

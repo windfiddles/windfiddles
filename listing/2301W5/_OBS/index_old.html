@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wind Fiddles</title>
+  <!-- <link rel="stylesheet" href="../../slickfiddles.css"> -->
+  <link rel="stylesheet" href="ssstyles.css">
+  <script src="https://www.googletagmanager.com/gtag/js?id=G-S9LCPP6DYB" async></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S9LCPP6DYB');
+  </script>
+  <script src="scripts.js" defer></script>
+</head>
+
+<body>
+
+  <div class="container-gallery-header">
+    <div class="text-gallery">
+      <h1 class="header-gallery">Wind Fiddles</h1>
+      <div class="links">
+        <ul class="gallery-links">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../contact.html">Inquiries</a></li>
+          <li><a href="../../listing.html">Listings</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="owner-desc">
+    <table>
+      <tr>
+        <td class="titles"> Year:</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td class="titles"> Number:</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td class="titles">Material:</td>
+        <td>Black Walnut</td>
+      </tr>
+      <tr>
+        <td class="titles">Configuration:</td>
+        <td>5-String</td>
+      </tr>
+      <tr>
+        <td class="titles">Pickup:</td>
+        <td>Barbera 5 =-String Twin Hybrid</td>
+      </tr>
+      <tr>
+        <td class="titles">Tuners:</td>
+        <td>Wittner Finetune Planetary Pegs</td>
+      </tr>
+      <tr>
+        <td class="titles">Price:</td>
+        <td><a href="http://www.electricviolinshop.com">Visit the Electric Violin Shop</a></td>
+      </tr>
+      <tr>
+        <td class="titles">Price with Case:</td>
+        <td>N/A</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- The expanding image container -->
+  <div class="container_image">
+    <!-- Close the image -->
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+    <!-- Expanded image -->
+    <img id="expandedImg">
+    <!-- Image text -->
+    <div id="imgtext"></div>
+  </div>
+
+  <div class="responsive">   
+    <div class="gallery-item" onclick="expand(this);">
+      <img src="1-top.webp" alt="Image 1">
+      <div class="desc"></div>
+    </div>
+    <div class="gallery-item" onclick="expand(this);">
+      <img src="2-top-treble.webp" alt="Image 2">
+      <div class="desc"></div>
+    </div>
+    <div class="gallery-item" onclick="expand(this);">
+      <img src="3-bottom-treble.webp" alt="Image 3">
+      <div class="desc"></div>
+    </div>
+    <div class="gallery-item" onclick="expand(this);">
+      <img src="4-back.webp" alt="Image 4">
+      <div class="desc"></div>
+    </div>
+  </div>
+
+  <div id="popup" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <img id="popup-image" src="" alt="Popup Image">
+    <div id="popup-caption" class="caption"></div>
+  </div>
+
+  <script>
+    function expand(imgs) {
+      var expandImg = document.getElementById("expandedImg");
+      var imgText = document.getElementById("imgtext");
+      expandImg.src = imgs.children[0].src;
+      imgText.innerHTML = imgs.children[1].innerText;
+      expandImg.parentElement.style.display = "block";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
