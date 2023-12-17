@@ -61,6 +61,14 @@ ul.gallery-links,
   display: flex;
 }
 
+@media screen and (max-width: 600px) { /* Adjust the max-width as needed */
+  ul.gallery-links a,
+  ul.home-links a {
+    font-size: 3vw; /* Larger font size for mobile */
+    /* ... other styles if needed ... */
+  }
+}
+
 .gallery-links,
 .listing-links {
   position: relative;
