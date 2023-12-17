@@ -50,7 +50,7 @@ ul.home-links {
 
 ul.gallery-links,
 .listing-links {
-  font-size: 2.5vw;
+  /*font-size: 2.5vw;*/
   /*display: inline-block;*/
   list-style-type: none;
   margin: 0;
@@ -61,13 +61,6 @@ ul.gallery-links,
   display: flex;
 }
 
-@media screen and (max-width: 600px) { /* Adjust the max-width as needed */
-  ul.gallery-links a,
-  ul.home-links a {
-    font-size: 3vw; /* Larger font size for mobile */
-    /* ... other styles if needed ... */
-  }
-}
 
 .gallery-links,
 .listing-links {
@@ -86,9 +79,9 @@ ul.gallery-links,
   color: #deb887;
 }
 
-ul.home-links li {
+/*ul.home-links li {
   margin-bottom: 10px;
-}
+}*/
 
 ul.gallery-links li {
   width: auto;
@@ -99,28 +92,39 @@ ul.gallery-links li {
 
 ul.home-links a,
 ul.gallery-links a {
-  display: inline-block;
-  padding: 0px 10px;
+
 }
 
 ul.home-links a {
-  color: #deb887;
-  text-decoration: underline; /* Add underline to links */
+  
 }
 
-ul.home-links a:hover {
+ul.home-links a:hover,
+ul.gallery-linkes a:hover {
   color: white;
   text-decoration: none; /* Remove underline on hover */
 }
 
+ul.home-links a,
 ul.gallery-links a {
   font-size: 1.5vw;
   padding: 16px;
   padding-left: 0px;
   text-align: center;
+  display: inline-block;
+  padding: 0px 10px;
+    color: #deb887;
+  text-decoration: underline; /* Add underline to links */
 }
 
 
+@media screen and (max-width: 600px) { /* Adjust the max-width as needed */
+  ul.gallery-links a,
+  ul.home-links a {
+    font-size: 3vw; /* Larger font size for mobile */
+    /* ... other styles if needed ... */
+  }
+}
 
 body {
   margin: 0;
