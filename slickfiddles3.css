@@ -121,7 +121,7 @@ ul.gallery-links a {
 @media screen and (max-width: 600px) { /* Adjust the max-width as needed */
   ul.gallery-links a,
   ul.home-links a {
-    font-size: 3vw; /* Larger font size for mobile */
+    font-size: 5vw; /* Larger font size for mobile */
     /* ... other styles if needed ... */
   }
 }
