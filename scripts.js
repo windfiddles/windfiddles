@@ -60,6 +60,8 @@ function navigateImages(offset) {
   }
 }
 
+//Left and right swipes on mobile
+
 let touchStartX = 0;
 let touchEndX = 0;
 
@@ -79,4 +81,26 @@ document.getElementById('popup').addEventListener('touchstart', e => {
 document.getElementById('popup').addEventListener('touchend', e => {
     touchEndX = e.changedTouches[0].screenX;
     checkSwipeGesture();
+}, false);
+
+
+
+//Close pop-up with downward swipe on mobile
+let touchStartY = 0;
+let touchEndY = 0;
+
+function checkDownwardSwipe() {
+    // Check if the swipe is downward
+    if (touchEndY > touchStartY + 30) { // 30 is the minimum threshold for swipe
+        closePopup();
+    }
+}
+
+document.getElementById('popup').addEventListener('touchstart', e => {
+    touchStartY = e.changedTouches[0].screenY;
+}, false);
+
+document.getElementById('popup').addEventListener('touchend', e => {
+    touchEndY = e.changedTouches[0].screenY;
+    checkDownwardSwipe();
 }, false);
