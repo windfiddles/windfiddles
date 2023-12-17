@@ -97,10 +97,12 @@ function checkDownwardSwipe() {
 }
 
 document.getElementById('popup').addEventListener('touchstart', e => {
+  e.preventDefault();
     touchStartY = e.changedTouches[0].screenY;
 }, false);
 
 document.getElementById('popup').addEventListener('touchend', e => {
+  e.preventDefault();
     touchEndY = e.changedTouches[0].screenY;
     checkDownwardSwipe();
 }, false);
