@@ -62,7 +62,7 @@
     { src: 'images/ash_dark.webp', caption: 'Ash 4-String - Prototype' },
     { src: 'images/ash_moss.webp', caption: 'Ash 4-String - Prototype' },
     { src: 'images/ash_stream.webp', caption: 'Ash 4-String - Prototype' },
-    { src: 'images/ash_dock.webp', caption: 'Ash 4-String - Prototype' },
+    { src: 'images/ash_dock.webp', caption: 'Ash 4-String - Prototype'},
     // { src: '11-bridge.webp', alt: 'Image 2' },
     // { src: '12-close-bottom.webp', alt: 'Image 3' },
     // { src: '13-portrait.webp', alt: 'Image 4' },
@@ -80,6 +80,7 @@
     const image = document.createElement('img');
     image.src = data.src;
     image.alt = data.caption;
+    image.loading = 'lazy'
 
     galleryItem.appendChild(image);
     document.getElementById('imageGallery').appendChild(galleryItem);
