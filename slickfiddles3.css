@@ -32,12 +32,21 @@ body {
   padding-left: 2.5%;
   padding-right: 2.5%;
   max-width: 50%;
+
 }
 
 h1.header-home {
   text-align: center;
   color: #deb887;
+    margin-bottom: 0;
 }
+
+h2.subheading {
+  text-align: center;
+ margin-top: 0;
+  font-size: 3vw;
+
+}  
 
 ul.home-links {
   font-size: 2.5vw; /* Adjust font size as needed */
@@ -149,7 +158,7 @@ body {
 }
 
 .home-text {
-  font-size: 4vw;
+  font-size: 3.5vw;
   padding-left: 2.5%;
   padding-right: 2.5%;
   float: left;
@@ -182,6 +191,7 @@ div.links {
 
 /* Colors */
 h1,
+h2,
 a,
 li,
 li a {
