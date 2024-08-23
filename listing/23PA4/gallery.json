@@ -1,0 +1,8 @@
+{
+    "images": [
+        {"src": "back.webp   ", "caption": "            ", "alt": "            "},
+        {"src": "top.webp    ", "caption": "            ", "alt": "            "},
+        {"src": "side.webp   ", "caption": "            ", "alt": "            "},
+        {"src": "front.webp  ", "caption": "            ", "alt": "            "}
+    ]
+}

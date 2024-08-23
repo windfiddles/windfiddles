@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S9LCPP6DYB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S9LCPP6DYB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-S9LCPP6DYB');
-</script>
+    gtag('config', 'G-S9LCPP6DYB');
+  </script>
   <title>Wind Fiddles</title>
-  <link rel="stylesheet" href="../../slickfiddles.css">
+  <link rel="stylesheet" href="../../slickfiddles3.css">
+  <script src="../../scripts.js" defer></script>
 </head>
-
 <body>
-
 
   <div class="container-gallery-header">
     <div class="text-gallery">
@@ -30,98 +31,84 @@
     </div>
   </div>
 
-
-<div class="owner-desc">
-<table>
-    <tr>
-        <td class="titles"> Violin:</td>
-        <td>Prototype</td>
-    </tr><tr>
-        <td class="titles"> Year:</td>
-        <td>2023</td>
-    </tr><tr>
-      <td class="titles">Material:</td>
-      <td>Ash</td>
-    </tr><tr>
-      <td class="titles">Configuration:</td>
-      <td>4-String</td>
-    </tr><tr>
-      <td class="titles">Pickup:</td>
-      <td>Barbera</td>
-    </tr><tr>
-      <td class="titles">Tuners:</td>
-      <td>Wittner Finetune Planetary Pegs</td>
-    </tr><tr>
-      <td class="titles">Price:</td>
-      <td>NFS</td>
-    </tr><tr>
-      <td class="titles">Price with Case:</td>
-      <td>NFS</td>
-    </tr>
-</table>
-</div>
-
-
-  <!-- The expanding image container -->
-  <div class="container_image">
-    <!-- Close the image -->
-    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-
-    <!-- Expanded image -->
-    <img id="expandedImg" > <!-- style="width:80%"> -->
-
-    <!-- Image text -->
-    <div id="imgtext"></div>
+  <div class="owner-desc">
+    <table id="ownerTable">
+      <!-- Content will be loaded here via JavaScript -->
+    </table>
   </div>
 
+  <div class="gallery" id="imageGallery"></div>
 
-
-  <div class="responsive">   
-    <div class="gallery">
-      <!-- <a target="_self" href="Images/ash_dark.png"> -->
-        <img src="front.webp" alt="" onclick="expand(this);">
-      </a>
-      <div class="desc"></div>
-    </div>
-
-    <div class="gallery">
-      <!-- <a target="_blank" href="Images/ash_dark.png"> -->
-        <img src="back.webp" alt=""  onclick="expand(this);">
-      </a>
-      <div class="desc"></div>
-    </div>
-
-    <div class="gallery">
-      <!-- <a target="_blank" href="Images/ash_dark.png"> -->
-        <img src="top.webp" alt=""  onclick="expand(this);">
-      </a>
-      <div class="desc"></div>
-    </div>
-
-    <div class="gallery">
-      <!-- <a target="_blank" href="Images/ash_dark.png"> -->
-        <img src="side.webp" alt=""  onclick="expand(this);">
-      </a>
-      <div class="desc"></div>
-    </div>
+  <div id="popup" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <img id="popup-image" src="" alt="Popup Image">
+    <div id="popup-caption" class="caption"></div>
+    <button class="popup-btn left" onclick="navigateImages(-1)">&#10094;</button>
+    <button class="popup-btn right" onclick="navigateImages(1)">&#10095;</button>
   </div>
 
+  <script>
+    // Load JSON data and populate the table
+    fetch('specs.json')
+      .then(response => response.json())
+      .then(data => {
+        const specs = data.specs;
+        const table = document.getElementById('ownerTable');
+
+        // Create table rows and cells only for non-empty values
+        const rows = [
+          { title: "Year:", value: specs.year },
+          { title: "Number:", value: specs.number },
+          { title: "Material:", value: specs.material },
+          { title: "Fingerboard Material:", value: specs.fingerboardMaterial },
+          { title: "Configuration:", value: specs.configuration },
+          { title: "Pickup:", value: specs.pickup },
+          { title: "Tuners:", value: specs.tuners },
+          { title: "Price:", value: specs.price && specs.location ? `${specs.price} at <a href="${specs.link}" target="_blank">${specs.location}</a>` : specs.price },
+          { title: "Price with Case:", value: specs.priceWithCase }
+        ];
+
+        // Populate table with rows
+        rows.forEach(row => {
+          if (row.value) {
+            const tr = document.createElement('tr');
+            const tdTitle = document.createElement('td');
+            tdTitle.classList.add('titles');
+            tdTitle.innerHTML = row.title;
+            const tdValue = document.createElement('td');
+            tdValue.innerHTML = row.value;
+            tr.appendChild(tdTitle);
+            tr.appendChild(tdValue);
+            table.appendChild(tr);
+          }
+        });
+      })
+      .catch(error => console.error('Error loading JSON:', error));
+
+    // Fetch gallery data from the JSON file
+    fetch('gallery.json')
+      .then(response => response.json())
+      .then(data => {
+        data.images.forEach((item, index) => createGalleryItem(item, index));
+      });
+
+    // Function to create gallery items dynamically
+    function createGalleryItem(data, index) {
+      const galleryItem = document.createElement('div');
+      galleryItem.classList.add('gallery-item');
+      galleryItem.onclick = function() {
+        openPopup(data.src, data.caption, index);
+      };
+
+      const image = document.createElement('img');
+      image.src = data.src; 
+      image.alt = data.alt || data.caption;
+      image.loading = 'lazy';
+
+      galleryItem.appendChild(image);
+      document.getElementById('imageGallery').appendChild(galleryItem);
+    }
+  </script>
 
 </body>
 </html>
-
-<script>
-  function expand(imgs) {
-  // Get the expanded image
-  var expandImg = document.getElementById("expandedImg");
-  // Get the image text
-  var imgText = document.getElementById("imgtext");
-  // Use the same src in the expanded image as the image being clicked on from the grid
-  expandImg.src = imgs.src;
-  // Use the value of the alt attribute of the clickable image as text inside the expanded image
-  imgText.innerHTML = imgs.alt;
-  // Show the container element (hidden with CSS)
-  expandImg.parentElement.style.display = "block";
-
-}
-</script>

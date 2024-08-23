@@ -1,0 +1,21 @@
+{
+    "images": [
+        {"src": "9-close-bass-neck.webp    ", "caption": "                          ", "alt": "                          "},
+        {"src": "5-bottom-bass.webp        ", "caption": "                          ", "alt": "                          "},
+        {"src": "2-top-treble.webp         ", "caption": "                          ", "alt": "                          "},
+        {"src": "8-close-treble-neck.webp  ", "caption": "                          ", "alt": "                          "},
+        {"src": "11-bridge.webp            ", "caption": "                          ", "alt": "                          "},
+        {"src": "12-close-bottom.webp      ", "caption": "                          ", "alt": "                          "},
+        {"src": "6-top-bass.webp           ", "caption": "                          ", "alt": "                          "},
+        {"src": "3-bottom-treble.webp      ", "caption": "                          ", "alt": "                          "},
+        {"src": "7-close-top.webp          ", "caption": "                          ", "alt": "                          "},
+        {"src": "13-portrait.webp          ", "caption": "                          ", "alt": "                          "},
+        {"src": "10-horizontal.webp        ", "caption": "                          ", "alt": "                          "},
+        {"src": "image4.jpg                ", "caption": "                          ", "alt": "                          "},
+        {"src": "1-top.webp                ", "caption": "                          ", "alt": "                          "},
+        {"src": "image1.jpg                ", "caption": "                          ", "alt": "                          "},
+        {"src": "4-back.webp               ", "caption": "                          ", "alt": "                          "},
+        {"src": "image2.jpg                ", "caption": "                          ", "alt": "                          "},
+        {"src": "image3.jpg                ", "caption": "                          ", "alt": "                          "}
+    ]
+}

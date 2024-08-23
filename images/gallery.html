@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S9LCPP6DYB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-S9LCPP6DYB');
+  </script>
+  <title>Wind Fiddles</title>
+  <link rel="stylesheet" href="../slickfiddles3.css">
+  <script src="../scripts.js" defer></script>
+</head>
+
+<body>
+
+  <div class="container-gallery-header">
+    <div class="text-gallery">
+      <h1 class="header-gallery">Wind Fiddles</h1>
+      <div class="links">
+        <ul class="gallery-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../contact.html">Inquiries</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <div class="links">
+    <ul class="listing-links">
+      <li><a href="../listing/2402A4/2402A4.html">Ash 4-String with Bloodwood Fingerboard</a></li>
+      <li><a href="../listing/2401C4/2401C4.html">Cherry 4-String with Birdseye Maple Fingerboard</a></li>      
+      <li><a href="../listing/2301W5/2301W5.html">Walnut 5-String available at the Electric Violin Shop</a></li>
+      <li><a href="../listing/2302WSP5/2302WSP5.html">Spalted Walnut 5-String </a></li>
+      <li><a href="../listing/23PA4/23PA4.html">Ash 4-String </a></li>
+      <li><a href="../listing/22PC4/22PC4.html">Cherry 4-String</a></li>
+</ul>
+</div>
+
+
+  <div class="gallery" id="imageGallery"></div>
+
+  <div id="popup" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <img id="popup-image" src="" alt="Popup Image">
+    <div id="popup-caption" class="caption"></div>
+    <button class="popup-btn left" onclick="navigateImages(-1)">&#10094;</button>
+    <button class="popup-btn right" onclick="navigateImages(1)">&#10095;</button>
+  </div>
+
+  <script>
+    // Fetch gallery data from the JSON file
+    fetch('gallery.json')
+      .then(response => response.json())
+      .then(data => {
+        data.images.forEach((item, index) => createGalleryItem(item, index));
+      });
+
+    // Function to create gallery items dynamically
+    function createGalleryItem(data, index) {
+      const galleryItem = document.createElement('div');
+      galleryItem.classList.add('gallery-item');
+      // data.src = `images/${data.src}`; 
+      galleryItem.onclick = function() {
+        openPopup(data.src, data.caption, index);
+      };
+
+      const image = document.createElement('img');
+      image.src = `images/${data.src}`; 
+      image.alt = data.alt || data.caption;
+      image.loading = 'lazy';
+
+      galleryItem.appendChild(image);
+      document.getElementById('imageGallery').appendChild(galleryItem);
+    }
+  </script>
+
+</body>
+</html>

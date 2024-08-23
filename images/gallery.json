@@ -1,0 +1,16 @@
+{
+    "images": [
+        {"src": "walnut-2-top-treble.webp                     ", "caption": "Walnut 5-String - $2999                      ", "alt": "Walnut 5                                     "},
+        {"src": "ash-2-top-treble.png                         ", "caption": "Ash 4-String                     ", "alt": "                                             "},
+        {"src": "spwalnut-2-top-treble.png                    ", "caption": "Spalted Walnut 5-String          ", "alt": "                                             "},
+        {"src": "cherry_top.webp                              ", "caption": "Cherry 4-String                  ", "alt": "                                             "},
+        {"src": "cherry_shikara.webp                          ", "caption": "Cherry 4-String                  ", "alt": "                                             "},
+        {"src": "teak_kayak.webp                              ", "caption": "Teak 5-String                    ", "alt": "                                             "},
+        {"src": "ash_dark.webp                                ", "caption": "Ash 4-String                     ", "alt": "                                             "},
+        {"src": "ash_moss.webp                                ", "caption": "Ash 4-String                     ", "alt": "                                             "},
+        {"src": "ash_stream.webp                              ", "caption": "Ash 4-String                     ", "alt": "                                             "},
+        {"src": "ash_dock.webp                                ", "caption": "Ash 4-String                     ", "alt": "                                             "},
+        {"src": "ash_hanging.webp                             ", "caption": "Ash 4-String                                             ", "alt": "                                             "},
+        {"src": "Fiddles in Case.webp                         ", "caption": "Triple Fiddle                                             ", "alt": "                                             "}
+    ]
+}
