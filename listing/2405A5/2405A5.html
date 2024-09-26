@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S9LCPP6DYB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-S9LCPP6DYB');
+  </script>
+  <title>Wind Fiddles</title>
+  <link rel="stylesheet" href="../../slickfiddles3.css">
+  <script src="../../scripts.js" defer></script>
+</head>
+<body>
+
+  <div class="container-gallery-header">
+    <div class="text-gallery">
+      <h1 class="header-gallery">Wind Fiddles</h1>
+      <div class="links">
+        <ul class="gallery-links">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../contact.html">Inquiries</a></li>
+          <li><a href="../../images/gallery.html">Listings</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="owner-desc">
+    <table id="ownerTable">
+      <!-- Content will be loaded here via JavaScript -->
+    </table>
+  </div>
+
+  <div class="gallery" id="imageGallery"></div>
+
+  <div id="popup" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <img id="popup-image" src="" alt="Popup Image">
+    <div id="popup-caption" class="caption"></div>
+    <button class="popup-btn left" onclick="navigateImages(-1)">&#10094;</button>
+    <button class="popup-btn right" onclick="navigateImages(1)">&#10095;</button>
+  </div>
+
+  <script>
+    // Load JSON data and populate the table
+    fetch('specs.json')
+      .then(response => response.json())
+      .then(data => {
+        const specs = data.specs;
+        const table = document.getElementById('ownerTable');
+
+        // Create table rows and cells only for non-empty values
+        const rows = [
+          { title: "Year:", value: specs.year },
+          { title: "Number:", value: specs.number },
+          { title: "Material:", value: specs.material },
+          { title: "Fingerboard Material:", value: specs.fingerboardMaterial },
+          { title: "Configuration:", value: specs.configuration },
+          { title: "Pickup:", value: specs.pickup },
+          { title: "Tuners:", value: specs.tuners },
+          { title: "Price:", value: specs.price && specs.location ? `${specs.price} at <a href="${specs.link}" target="_blank">${specs.location}</a>` : specs.price },
+          { title: "Price with Case:", value: specs.priceWithCase }
+        ];
+
+        // Populate table with rows
+        rows.forEach(row => {
+          if (row.value) {
+            const tr = document.createElement('tr');
+            const tdTitle = document.createElement('td');
+            tdTitle.classList.add('titles');
+            tdTitle.innerHTML = row.title;
+            const tdValue = document.createElement('td');
+            tdValue.innerHTML = row.value;
+            tr.appendChild(tdTitle);
+            tr.appendChild(tdValue);
+            table.appendChild(tr);
+          }
+        });
+      })
+      .catch(error => console.error('Error loading JSON:', error));
+
+    // Fetch gallery data from the JSON file
+    fetch('gallery.json')
+      .then(response => response.json())
+      .then(data => {
+        data.images.forEach((item, index) => createGalleryItem(item, index));
+      });
+
+    // Function to create gallery items dynamically
+    function createGalleryItem(data, index) {
+      const galleryItem = document.createElement('div');
+      galleryItem.classList.add('gallery-item');
+      galleryItem.onclick = function() {
+        openPopup(data.src, data.caption, index);
+      };
+
+      const image = document.createElement('img');
+      image.src = data.src; 
+      image.alt = data.alt || data.caption;
+      image.loading = 'lazy';
+
+      galleryItem.appendChild(image);
+      document.getElementById('imageGallery').appendChild(galleryItem);
+    }
+  </script>
+
+</body>
+</html>
